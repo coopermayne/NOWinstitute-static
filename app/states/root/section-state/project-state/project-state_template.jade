@@ -42,7 +42,7 @@
 		
 		//- DESKTOP PROJECT PAGE//////////////////////////////////
 		.project-page-text-wrapper(
-			ng-if='!mobile && (( stateParams.section === "search" && stateParams.m == "project" ) || ["architecture", "research", "tangents", "research", "planning"].indexOf(stateParams.section) != -1 || ( stateParams.section === "about" && stateParams.m === "project" ))'
+			ng-if='!mobile && (( stateParams.section === "search" && stateParams.m == "project" ) || ["projects", "research", "tangents", "research", "planning"].indexOf(stateParams.section) != -1 || ( stateParams.section === "about" && stateParams.m === "project" ))'
 		)
 
 			.project-page-sidebar(ng-if='activeItem')
@@ -98,20 +98,20 @@
 				
 				//- Project Credits (DESKTOP)
 				.project-page-sidebar-section(
-					ng-if='activeItem.morph_team.length || activeItem.contractors.length'
+					ng-if='activeItem.ucla_team.length || activeItem.contractors.length'
 				)
-					.project-page-sidebar-header( ng-show='activeItem.morph_team.length || activeItem.contractors.length')
+					.project-page-sidebar-header( ng-show='activeItem.ucla_team.length || activeItem.contractors.length')
 						| Project Credits
 					
-					//morph team
+					//ucla_team team
 					.show-morph-team.details-clickable.contracted(
 						ng-click='showMorphTeam = !showMorphTeam'
-						ng-show='activeItem.morph_team.length'
+						ng-show='activeItem.ucla_team.length'
 						ng-toggle-class='contracted open'
 					)
-						| Morphosis Team
+						| UCLA Team
 					.project-detail-wrapper(
-						ng-repeat='position in activeItem.morph_team'
+						ng-repeat='position in activeItem.ucla_team'
 						ng-show='showMorphTeam'
 					)
 						.project-detail-label
@@ -313,11 +313,11 @@
 					| {{ activeItem.overview }}
 
 			.project-page-second-sidebar(
-				ng-if='mobile && ( activeItem.contractors.length || activeItem.morph_team.length || activeItem.awards.length || activeItem.bibliography_items.length )'
+				ng-if='mobile && ( activeItem.contractors.length || activeItem.ucla_team.length || activeItem.awards.length || activeItem.bibliography_items.length )'
 				style='order: 3;'
 			)
 				.project-page-sidebar-section.project-credits.contracted(
-					ng-if='activeItem.morph_team.length || activeItem.contractors.length'
+					ng-if='activeItem.ucla_team.length || activeItem.contractors.length'
 					ng-toggle-class='contracted open'
 				)
 					.project-page-sidebar-header
@@ -325,13 +325,13 @@
 					
 					//morph team
 					.show-morph-team.details-clickable.contracted(
-            ng-show='activeItem.morph_team.length > 0'
+            ng-show='activeItem.ucla_team.length > 0'
 						ng-click='showMorphTeam = !showMorphTeam'
 						ng-toggle-class='contracted open'
 					)
 						| Morphosis Team
 					.project-detail-wrapper(
-						ng-repeat='position in activeItem.morph_team'
+						ng-repeat='position in activeItem.ucla_team'
 						ng-show='showMorphTeam'
 					)
 						.project-detail-label

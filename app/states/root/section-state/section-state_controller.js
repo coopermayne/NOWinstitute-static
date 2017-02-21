@@ -120,9 +120,7 @@ sectionState.controller( 'SectionStateController', function( $rootScope, $scope,
 	$scope.$watchCollection( 'indexContents', function(  )
 	{
 		if( $scope.indexContents && $scope.indexContents.length != 0 )
-		{
-			placeMarkers();
-		}
+    {}
 		else
 		{
 			if ( $scope.stateParams.sortingType !== 'media' )
