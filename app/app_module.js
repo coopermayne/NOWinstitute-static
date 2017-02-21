@@ -8,8 +8,6 @@ var morphopedia = angular.module( 'morphopedia',
 
 	'angular-preload-image',
 
-	'leaflet-directive',
-
 	'angular.filter',
 
 	'root',
@@ -31,17 +29,15 @@ morphopedia.config( function(  $urlRouterProvider, $locationProvider, $sceDelega
 		// Allow same origin resource loads.
 		'self',
 		// Allow loading from our assets domain.
-		'https://morphassets.s3.amazonaws.com/**'
+		'https://now-institute-assets-dev.s3.amazonaws.com/**'
 		]);
 
 } );
 
 
-morphopedia.run( [ '$rootScope', '$location', '$window', function( $rootScope, $location, $window )
+morphopedia.run( [ '$rootScope', '$location', function( $rootScope, $location )
 {
-	$window.ga('create', 'UA-75621728-1', 'auto');
-
-	$rootScope.apiUrl = "http://morphosisapi.herokuapp.com/";
+	$rootScope.apiUrl = "http://localhost:3000/";
 
 	// For Mobile Angular UI compatibility
 	$rootScope.$on( '$stateChangeStart', function(  )
@@ -57,7 +53,6 @@ morphopedia.run( [ '$rootScope', '$location', '$window', function( $rootScope, $
 		$rootScope.toState = toState;
 		$rootScope.toParams = toParams;
 
-		$window.ga('send', 'pageview', $location.path());
 	} );
 
 	// Device test

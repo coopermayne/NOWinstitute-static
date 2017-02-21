@@ -7,6 +7,7 @@ slideshowDirective.controller( 'SlideshowDirectiveController', function( $rootSc
 {
 
 	console.log('SlideShowDirectiveController active!')
+  console.log( $scope.section );
 	var counter = -1;
 
 	$scope.stateParams = $stateParams;

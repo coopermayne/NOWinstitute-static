@@ -14,7 +14,7 @@
 		| Date
 
 .index-project-wrapper#index-wrapper(
-	ng-if='!altIndexSection && stateParams.sortingType !== "location"'
+	ng-if='!altIndexSection'
 	ng-class='{ "mobile-index-wrapper": mobile }'
 )
 	throbber-directive
@@ -201,15 +201,6 @@
 					ng-if='item.types.indexOf("Books") == -1 && item.description.length > 0 && stateParams.section != "search" || ( stateParams.section === "news" )'
 					ng-bind-html='item.description | htmlParse'
 				)
-
-.location-index-wrapper( ng-if='stateParams.sortingType === "location"' )
-	leaflet(
-		lf-center='center'
-		markers='markers'
-		maxBounds='maxBounds' 
-		defaults='defaults'
-		layers='layers'
-	)
 
 .prev-and-next-wrapper(
 	ng-if='(stateParams.sortingType === "media") && indexContents.length'
