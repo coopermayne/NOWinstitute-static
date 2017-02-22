@@ -104,7 +104,7 @@ ul.menu-directive-wrapper.scrollable-content(
 	//- Build each big menu item and subsections
 	li.menu-section(
 		ng-repeat='bigMenuItem in menuItems.sections'
-		ui-sref='root.section-state( { section: bigMenuItem.url, s: null, q: null, e: null, m: null, p: null, sub: null } )'
+    ui-sref='{{bigMenuItem.state}}({ section: bigMenuItem.url, sortingType: bigMenuItem.sorting[0].title.toLowerCase(), q: null, e: null, p: null, sub: null })'
 		ng-click='resolveMobileSortingClick( bigMenuItem.title ); $event.stopPropagation(  )'
 	)
 		.section-title(
@@ -229,10 +229,9 @@ a.facebook-link(
 
 //- For desktop, load all at same time
 slideshow-directive(
-	ng-repeat='section in menuItems.sections'
-	section='section.url'
-	ng-show='!stateParams.sortingType && stateParams.section === section.url'
-  slides='section.slides'
+  section='menuItems.sections[0].url'
+	ng-show='!stateParams.sortingType && stateParams.section === "about"'
+  slides='menuItems.sections[0].slides'
 	frame-rate='2000'
 )
 
