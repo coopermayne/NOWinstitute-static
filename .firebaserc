@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "now-institute"
+    "live": "now-institute",
+    "staging": "now-institute-staging"
   }
 }
