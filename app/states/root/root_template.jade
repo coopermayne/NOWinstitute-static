@@ -7,9 +7,3 @@
 		menu-directive.scrollable
 
 		.section-view( ui-view='section-view' ng-if='stateParams.sortingType || stateParams.projectId || stateParams.section === "news" || stateParams.section === "search"' )
-
-slideshow-directive(
-	slides='homePageSlides'
-	frame-rate='2000'
-	ng-if='(stateName == "root") && homePageSlides'
-)

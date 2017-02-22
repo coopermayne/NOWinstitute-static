@@ -235,3 +235,9 @@ slideshow-directive(
   slides='section.slides'
 	frame-rate='2000'
 )
+
+slideshow-directive(
+	slides='homePageSlides'
+	frame-rate='2000'
+	ng-show='(stateName == "root") && homePageSlides'
+)
