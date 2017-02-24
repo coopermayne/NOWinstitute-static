@@ -115,13 +115,13 @@ ul.menu-directive-wrapper.scrollable-content(
 
 
 			//- News box
-			slideshow-directive.news-box(
-				ng-if='bigMenuItem.url === "news" && !stateParams.section && bigMenuItem.items'
-				slides='bigMenuItem.items'
-				thumb='true'
-				news='true'
-				ng-click='closeMobileMenu(  )'
-			)
+      slideshow-directive.news-box(
+        ng-if='bigMenuItem.url === "news" && !stateParams.section && bigMenuItem.items'
+        slides='bigMenuItem.items'
+        thumb='true'
+        news='true'
+        ng-click='closeMobileMenu(  )'
+      )
 	
 		//- Sorting options (Alphabetical, Year, Type)
 		.sorting-options(
@@ -229,14 +229,15 @@ a.facebook-link(
 
 //- For desktop, load all at same time
 slideshow-directive(
-  section='menuItems.sections[0].url'
-	ng-show='!stateParams.sortingType && stateParams.section === "about"'
-  slides='menuItems.sections[0].slides'
-	frame-rate='2000'
+  slides='menuItems.homeSlides'
+  frame-rate='2000'
+  ng-show='(stateName == "root") && menuItems.homeSlides'
 )
 
 slideshow-directive(
-	slides='menuItems.homeSlides'
-	frame-rate='2000'
-	ng-show='(stateName == "root") && menuItems.homeSlides'
+  section='menuItems.sections[0].url'
+  ng-show='!stateParams.sortingType && stateParams.section === "about"'
+  slides='menuItems.sections[0].slides'
+  frame-rate='2000'
 )
+
