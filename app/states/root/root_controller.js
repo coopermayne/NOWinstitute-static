@@ -28,16 +28,6 @@ root.controller( 'RootController', function( $rootScope, $scope, $state, $stateP
 		$scope.mobile = true;
 	}
 
-	// Get video slides
-	$http(
-	{
-		method: 'GET',
-		url: $rootScope.apiUrl + 'video_slides.json'
-	} ).then( function( response )
-	{
-		$scope.homePageSlides = response.data;
-	} );
-
 	$rootScope.$on( '$stateChangeSuccess', function( event, to, toParams, from, fromParams )
 	{
 		$rootScope.previousState = from;
