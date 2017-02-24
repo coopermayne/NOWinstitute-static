@@ -556,6 +556,14 @@ figcaption *
 		top: -2px;
 		left: -15px;
 	}
+	&.first 
+	{
+		&:before
+		{
+			top: 15px;
+			left: -15px;
+		}
+	}
 
 	.mobile-details
 	{
@@ -651,6 +659,15 @@ figcaption *
 		position: absolute;
 		top: -2px;
 		left: -15px;
+	}
+
+	&.first 
+	{
+		&:before
+		{
+			top: 15px;
+			left: -15px;
+		}
 	}
 
 	&.project-page-sidebar-section
