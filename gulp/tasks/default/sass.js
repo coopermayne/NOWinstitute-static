@@ -26,14 +26,14 @@ gulp.task( 'csscomb', function (  )
 		.pipe( gulp.dest( './app' ) );
 } );
 
-gulp.task( 'scss-lint', [ 'csscomb' ], function(  )
+gulp.task( 'scss-lint', function(  )
 {
 	return gulp.src( path.to.sass.source )
 		.pipe( scsslint( { config: 'scss-linting-config.yml' } ) )
 		.on( 'error', error.handler );
 } );
 
-gulp.task( 'sass', [ 'scss-lint' ], function(  )
+gulp.task( 'sass', function(  )
 {
 		// select all vendor/css files
 		gulp.src( path.to.css.source )

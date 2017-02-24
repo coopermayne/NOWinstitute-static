@@ -22,7 +22,7 @@ gulp.task( 'eslint', function(  )
 		.pipe( eslint.format(  ) );
 } );
 
-gulp.task( 'scripts', [ 'eslint' ], function(  )
+gulp.task( 'scripts', function(  )
 {
 	return gulp.src( path.to.scripts.source )
 		.pipe( cache( 'scripts' ) )

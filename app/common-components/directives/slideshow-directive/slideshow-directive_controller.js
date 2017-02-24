@@ -6,8 +6,6 @@ var slideshowDirective = angular.module( 'slideshowDirective' );
 slideshowDirective.controller( 'SlideshowDirectiveController', function( $rootScope, $scope, $state, $stateParams, $interval, screenSize, $timeout, $element )
 {
 
-	console.log('SlideShowDirectiveController active!')
-  console.log( $scope.section );
 	var counter = -1;
 
 	$scope.stateParams = $stateParams;

@@ -25,6 +25,7 @@ menuDirective.controller( 'MenuDirectiveController', function( $rootScope, $scop
 
 	$scope.$watch('showMobileMenuVar', function()
 	{
+		console.log("show menu: " + $scope.showMobileMenuVar);
 		// Android keyboard-handling functions
 		$timeout(function()
 		{
@@ -116,14 +117,10 @@ menuDirective.controller( 'MenuDirectiveController', function( $rootScope, $scop
 				// $scope.showMobileMenuVar = false;
 				// break;
 
-				case 'Morphosis':
-				case 'Architecture':
+				case 'Now':
 				case 'A-Z':
 				case 'Year':
 				case 'Type':
-				case 'Planning':
-				case 'Tangents':
-				case 'Research':
 				case 'Media':
 				break;
 

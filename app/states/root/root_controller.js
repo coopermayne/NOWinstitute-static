@@ -8,8 +8,6 @@ root.controller( 'RootController', function( $rootScope, $scope, $state, $stateP
 
 	$scope.stateName = 'root';
 
-	console.log('RootController active!');
-
 	$scope.state = $state;
 
 	$scope.stateParams = $stateParams;

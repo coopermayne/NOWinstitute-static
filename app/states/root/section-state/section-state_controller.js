@@ -167,8 +167,6 @@ sectionState.controller( 'SectionStateController', function( $rootScope, $scope,
 		}
 	}
 
-console.log( 'SectionStateController active!' );
-
 $scope.stateName = 'section-state';
 
 $scope.sortingType = $stateParams.sortingType;
