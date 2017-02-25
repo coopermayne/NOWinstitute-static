@@ -425,13 +425,30 @@ menu-directive
 	}
 }
 
+.newnews {
+  a
+  {
+    text-decoration: none;
+  }
+}
+.news-white {
+  a
+  {
+    color: $white !important;
+  }
+}
+
 .news-highlight
 {
 	flex: none;
 
 	display: inline;
 
-	color: $yellow;
+	a
+  {
+		text-decoration: none;
+		color: $yellow;
+	}
 
 	.section-title-inner
 	{

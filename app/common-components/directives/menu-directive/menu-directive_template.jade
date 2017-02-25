@@ -104,6 +104,7 @@ ul.menu-directive-wrapper.scrollable-content(
 	//- Build each big menu item and subsections
 	li.menu-section(
 		ng-repeat='bigMenuItem in menuItems.sections'
+		ng-if='bigMenuItem.url !== "news"'
     ui-sref='{{bigMenuItem.state}}({ section: bigMenuItem.url, sortingType: bigMenuItem.sorting[0].title.toLowerCase(), q: null, e: null, p: null, sub: null, s: null })'
 		ng-click='resolveMobileSortingClick( bigMenuItem.title ); $event.stopPropagation(  )'
 	)
@@ -113,16 +114,6 @@ ul.menu-directive-wrapper.scrollable-content(
 			span.section-title-inner
 				| {{ bigMenuItem.title }}
 
-
-			//- News box
-			slideshow-directive.news-box(
-				ng-if='bigMenuItem.url === "news" && !stateParams.section && bigMenuItem.items'
-				slides='bigMenuItem.items'
-				thumb='true'
-				news='true'
-				ng-click='closeMobileMenu(  )'
-			)
-	
 		//- Sorting options (Alphabetical, Year, Type)
 		.sorting-options(
 			ng-if='stateParams.section == bigMenuItem.url'
@@ -187,6 +178,16 @@ ul.menu-directive-wrapper.scrollable-content(
 								ng-class='{"selected": stateParams.q && stateParams.q === (subSection.title.toLowerCase(  ) || subSection.toLowerCase(  )) }'
 							)
 								| {{ subSection.title }}
+
+	//News
+	li.menu-section(
+	)
+		.section-title.newnews(
+			ng-class='{"news-highlight": !stateParams.section, "news-white": stateParams.section == "about" }'
+		)
+			span.section-title-inner
+				a( href="http://www.aud.ucla.edu/programs/m_arch_ii_degree_1/studios/mayne/category/studio/news/" target="_blank")
+					| News
 
 	//- Search
 	li.menu-section.search( ng-if='stateParams.section && menuItems' )
