@@ -156,7 +156,6 @@ ul.menu-directive-wrapper.scrollable-content(
 							ui-sref='root.section-state.sorting-state( { q: "num", e: null, p: null, sub: null } )'
 						)
 							p( ng-class='{ "selected": stateParams.q === "num" }' )
-								| #
 						li.option(
 							ng-repeat='littleSortingOption in sortingOption.items'
 							ui-sref='root.section-state.sorting-state( { q: littleSortingOption.title.toLowerCase(  ) || littleSortingOption.toLowerCase(  ), e: null, p: null, sub: null } )'
