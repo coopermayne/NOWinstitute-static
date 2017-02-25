@@ -207,25 +207,18 @@ ul.menu-directive-wrapper.scrollable-content(
 		.about-text-header( ng-bind-html='menuItems.sections[0].about | htmlParse' )
 
 a.twitter-link(
-	ng-href='https://twitter.com/M0rphosis'
+	ng-href='https://twitter.com/thenowinstitute'
 	target='_blank'
 	ng-if='!stateParams.section'
 )
 	img.twitter-icon(src="images/twitter_icon.png")
 
 a.instagram-link(
-	ng-href='https://www.instagram.com/morphosisarchitects/'
+	ng-href='https://www.instagram.com/thenowinstitute/'
 	target='_blank'
 	ng-if='!stateParams.section'
 )
 	img.instagram-icon(src="images/instagram_icon.png")
-
-a.facebook-link(
-	ng-href='http://www.facebook.com/MorphosisArchitectsOfficial'
-	target='_blank'
-	ng-if='!stateParams.section'
-)
-	img.facebook-icon(src="images/facebook_icon.png")
 
 //- For desktop, load all at same time
 slideshow-directive(
