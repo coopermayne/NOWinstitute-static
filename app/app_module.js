@@ -13,7 +13,6 @@ var morphopedia = angular.module( 'morphopedia',
 	'root',
 
 	'mobile-angular-ui'
-
 ] );
 
 morphopedia.config( function(  $urlRouterProvider, $locationProvider, $sceDelegateProvider, $logProvider )
@@ -29,8 +28,6 @@ morphopedia.config( function(  $urlRouterProvider, $locationProvider, $sceDelega
 		// Allow same origin resource loads.
 		'self',
 		// Allow loading from our assets domain.
-    'https://now-institute-assets-dev.s3.amazonaws.com/**',
-		'https://now-institute-assets-staging.s3.amazonaws.com/**',
     'https://now-institute-assets.s3.amazonaws.com/**'
 		]);
 
@@ -39,7 +36,7 @@ morphopedia.config( function(  $urlRouterProvider, $locationProvider, $sceDelega
 
 morphopedia.run( [ '$rootScope', '$location', function( $rootScope, $location )
 {
-	//$rootScope.apiUrl = "http://localhost:3000/";
+  //$rootScope.apiUrl = "http://localhost:3000/";
   $rootScope.apiUrl = "https://now-institute-api.herokuapp.com/";
 	//$rootScope.apiUrl = "https://hidden-fortress-43663.herokuapp.com/";
 
