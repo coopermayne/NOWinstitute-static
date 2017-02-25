@@ -168,7 +168,7 @@ ul.menu-directive-wrapper.scrollable-content(
 	li.menu-section(
 	)
 		.section-title.newnews(
-			ng-class='{"news-highlight": !stateParams.section, "news-white": stateParams.section == "about" && stateParams.sortingType!=="contact" }'
+			ng-class='{"news-highlight": !stateParams.section, "news-white": stateParams.section == "about" && stateParams.sortingType!=="contact" && stateParams.sortingType!=="people" }'
 		)
 			span.section-title-inner
 				a( href="http://www.aud.ucla.edu/programs/m_arch_ii_degree_1/studios/mayne/category/studio/news/" target="_blank")
