@@ -431,6 +431,12 @@ menu-directive
     text-decoration: none;
   }
 }
+.news-black {
+  a
+  {
+    color: $black !important;
+  }
+}
 .news-white {
   a
   {

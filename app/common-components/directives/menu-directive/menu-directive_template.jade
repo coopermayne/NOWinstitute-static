@@ -35,20 +35,6 @@
 	ng-if='stateParams.section === "about" && stateParams.sortingType=="contact"'
 	ng-class='{ "mobile-menu-contact-text": mobile }'
 )
-	.menu-about-nav( ng-if='!mobile')
-		a(
-			ng-repeat='link in [ "contact", "employment" ]'
-			ng-class='{ "active-about": activeAbout( link ) }'
-			href='{{ "#" + link }}'
-		)
-			| {{ link.charAt(0).toUpperCase() + link.slice(1) }}
-		a(
-			ng-repeat='link in ["form"]'
-			ng-class='{ "active-about": activeAbout( link ) }'
-			href='{{ "#" + link }}'
-		)
-			| Newsletter
-
 	.menu-about-text.html-inline-fix
 
 		a.anchor( name='contact')
@@ -182,7 +168,7 @@ ul.menu-directive-wrapper.scrollable-content(
 	li.menu-section(
 	)
 		.section-title.newnews(
-			ng-class='{"news-highlight": !stateParams.section, "news-white": stateParams.section == "about" }'
+			ng-class='{"news-highlight": !stateParams.section, "news-white": stateParams.section == "about" && stateParams.sortingType!=="contact" }'
 		)
 			span.section-title-inner
 				a( href="http://www.aud.ucla.edu/programs/m_arch_ii_degree_1/studios/mayne/category/studio/news/" target="_blank")
